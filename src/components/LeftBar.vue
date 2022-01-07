@@ -2,7 +2,7 @@
  * @Author: zhilutianji
  * @Date: 2021-12-19 18:32:18
  * @LastEditors: zhilutianji
- * @LastEditTime: 2022-01-07 02:16:47
+ * @LastEditTime: 2022-01-07 22:52:39
  * @Description: file content
  * @FilePath: \opal\src\components\LeftBar.vue
 -->
@@ -36,6 +36,7 @@
       <el-menu-item index="/classification/yellow">黄色</el-menu-item>
       <el-menu-item index="/classification/orange">橙色</el-menu-item>
       <el-menu-item index="/classification/red">红色</el-menu-item>
+      
     </el-submenu>
 
     <el-menu-item index="/about">
@@ -50,13 +51,13 @@ export default {
   name: "LeftBar",
   data() {
     return {
-      opalOptions:JSON.parse(window.localStorage.getItem('opalOptions')) || []
+      opalOptions: JSON.parse(window.localStorage.getItem("opalOptions")) || [],
     };
   },
-  computed:{
-    isCollapse(){
-      return this.opalOptions[0].isCollapse
-    }
+  computed: {
+    isCollapse() {
+      return this.opalOptions[0].isCollapse;
+    },
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -67,26 +68,26 @@ export default {
     },
   },
   mounted() {
-    if(window.localStorage.getItem('opalOptions') ==null){
-      this.opalOptions.push({name:'option',isCollapse:true})
+    if (window.localStorage.getItem("opalOptions") == null) {
+      this.opalOptions.push({ name: "option", isCollapse: true });
     }
-    this.$bus.$on("changeLeftBarIsCollapse", ()=>{
-      this.opalOptions.forEach((obj)=>{
-        if(obj.name === 'option') obj.isCollapse=!obj.isCollapse
-      })
-    })
+    this.$bus.$on("changeLeftBarIsCollapse", () => {
+      this.opalOptions.forEach((obj) => {
+        if (obj.name === "option") obj.isCollapse = !obj.isCollapse;
+      });
+    });
   },
   watch: {
     //监听路由变化，并给currentMenu
     $route(e) {
       this.currentMenu = e.path; // e里面的是当前路由的信息
     },
-    opalOptions:{
-      deep:true,
-      handler(value){
-        window.localStorage.setItem('opalOptions',JSON.stringify(value))
+    opalOptions: {
+      deep: true,
+      handler(value) {
+        window.localStorage.setItem("opalOptions", JSON.stringify(value));
       },
-    }
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
  * @Author: zhilutianji
  * @Date: 2021-12-29 16:13:08
  * @LastEditors: zhilutianji
- * @LastEditTime: 2022-01-07 02:31:26
+ * @LastEditTime: 2022-01-07 22:06:54
  * @Description: file content
  * @FilePath: \opal\src\pages\Statistics.vue
 -->
@@ -74,6 +74,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px;
 }
 #main,
 #main2,
