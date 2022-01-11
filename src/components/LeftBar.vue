@@ -2,7 +2,7 @@
  * @Author: zhilutianji
  * @Date: 2021-12-19 18:32:18
  * @LastEditors: zhilutianji
- * @LastEditTime: 2022-01-07 22:52:39
+ * @LastEditTime: 2022-01-11 09:36:43
  * @Description: file content
  * @FilePath: \opal\src\components\LeftBar.vue
 -->
@@ -55,9 +55,9 @@ export default {
     };
   },
   computed: {
-    isCollapse() {
-      return this.opalOptions[0].isCollapse;
-    },
+    isCollapse(){
+      return this.opalOptions[0].isCollapse
+    }
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -67,10 +67,14 @@ export default {
       console.log(key, keyPath);
     },
   },
-  mounted() {
+  // 应该在created进行ajax或初始化数据
+  created(){
     if (window.localStorage.getItem("opalOptions") == null) {
       this.opalOptions.push({ name: "option", isCollapse: true });
     }
+  },
+  // 在mounted里进行挂载操作
+  mounted() {
     this.$bus.$on("changeLeftBarIsCollapse", () => {
       this.opalOptions.forEach((obj) => {
         if (obj.name === "option") obj.isCollapse = !obj.isCollapse;
@@ -86,6 +90,7 @@ export default {
       deep: true,
       handler(value) {
         window.localStorage.setItem("opalOptions", JSON.stringify(value));
+        this.isCollapse= value
       },
     },
   },
