@@ -2,7 +2,7 @@
  * @Author: zhilutianji
  * @Date: 2021-12-19 18:32:18
  * @LastEditors: zhilutianji
- * @LastEditTime: 2022-01-11 09:36:43
+ * @LastEditTime: 2022-01-11 10:03:19
  * @Description: file content
  * @FilePath: \opal\src\components\LeftBar.vue
 -->
@@ -12,7 +12,7 @@
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
-    :collapse="isCollapse"
+    :collapse="this.opalOptions[0].isCollapse"
     :router="true"
   >
     <el-menu-item index="/home">
@@ -32,11 +32,12 @@
         <i class="el-icon-collection"></i>
         <span slot="title">分类</span>
       </template>
-      <el-menu-item index="/classification/blue">蓝色</el-menu-item>
+      <el-menu-item index="/classification/blue"
+        ><span class="blue"></span>蓝色</el-menu-item
+      >
       <el-menu-item index="/classification/yellow">黄色</el-menu-item>
       <el-menu-item index="/classification/orange">橙色</el-menu-item>
       <el-menu-item index="/classification/red">红色</el-menu-item>
-      
     </el-submenu>
 
     <el-menu-item index="/about">
@@ -54,11 +55,6 @@ export default {
       opalOptions: JSON.parse(window.localStorage.getItem("opalOptions")) || [],
     };
   },
-  computed: {
-    isCollapse(){
-      return this.opalOptions[0].isCollapse
-    }
-  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
@@ -68,7 +64,7 @@ export default {
     },
   },
   // 应该在created进行ajax或初始化数据
-  created(){
+  created() {
     if (window.localStorage.getItem("opalOptions") == null) {
       this.opalOptions.push({ name: "option", isCollapse: true });
     }
@@ -90,7 +86,6 @@ export default {
       deep: true,
       handler(value) {
         window.localStorage.setItem("opalOptions", JSON.stringify(value));
-        this.isCollapse= value
       },
     },
   },
@@ -109,6 +104,11 @@ export default {
 .el-menu-vertical-demo > div {
   height: 60px;
   width: 200px;
+  background-color: blue;
+}
+.blue {
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: blue;
 }
 </style>
