@@ -74,7 +74,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
+  padding: 1rem;
 }
 #main,
 #main2,

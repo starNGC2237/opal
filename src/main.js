@@ -21,21 +21,16 @@ import router from './router/index'
 import * as echarts from 'echarts'
 //导入vuex
 import store from './store'
-
+//导入dayjs
+import dayjs from "dayjs"
+// 媒体查询
+import 'element-ui/lib/theme-chalk/display.css';
 
 Vue.config.productionTip = false
 //使用插件
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 
-let orignalSetItem = window.localStorage.setItem;   // 原生localStorage.setItem方法
-localStorage.setItem = function(key,newValue){
-  let setItemEvent = new Event("setItemEvent");  // 重写注册setItem
-  setItemEvent.key = key;                        
-  setItemEvent.newValue = newValue;              
-  window.dispatchEvent(setItemEvent);            // 派发setItem
-  orignalSetItem.apply(this, arguments);         // 设置值
-}
 
 new Vue({
   render: h => h(App),
@@ -44,5 +39,6 @@ new Vue({
   beforeCreate(){
     Vue.prototype.$bus = this,
     Vue.prototype.$echarts = echarts
+    Vue.prototype.$dayjs = dayjs;
   }
 }).$mount('#app')

@@ -10,9 +10,7 @@
   <el-menu
     default-active="currentMenu"
     class="el-menu-vertical-demo"
-    @open="handleOpen"
-    @close="handleClose"
-    :collapse="this.opalOptions[0].isCollapse"
+    :collapse="isCollapse"
     :router="true"
   >
     <el-menu-item index="/home">
@@ -27,17 +25,17 @@
       <i class="el-icon-pie-chart"></i>
       <span slot="title">统计</span>
     </el-menu-item>
-    <el-submenu index="/classification">
-      <template slot="title">
+    <el-submenu index="/classification" @click.native="toClassification()">
+      <template slot="title" >
         <i class="el-icon-collection"></i>
         <span slot="title">分类</span>
       </template>
-      <el-menu-item index="/classification/blue"
-        ><span class="blue"></span>蓝色</el-menu-item
+      <el-menu-item index="/classification/blue" @click.native.stop="toClassificationBlue()"
+        >蓝色</el-menu-item
       >
-      <el-menu-item index="/classification/yellow">黄色</el-menu-item>
-      <el-menu-item index="/classification/orange">橙色</el-menu-item>
-      <el-menu-item index="/classification/red">红色</el-menu-item>
+      <el-menu-item index="/classification/yellow" @click.native.stop="toClassificationYellow()">黄色</el-menu-item>
+      <el-menu-item index="/classification/orange" @click.native.stop="toClassificationOrange()">橙色</el-menu-item>
+      <el-menu-item index="/classification/red" @click.native.stop="toClassificationRed()">红色</el-menu-item>
     </el-submenu>
 
     <el-menu-item index="/about">
@@ -52,42 +50,52 @@ export default {
   name: "LeftBar",
   data() {
     return {
-      opalOptions: JSON.parse(window.localStorage.getItem("opalOptions")) || [],
+      isCollapse:true,
+      screenWidth: null
     };
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    toClassification(){
+      this.$router.push('/classification',()=>{},()=>{})
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    toClassificationBlue(){
+      this.$router.push('/classification/blue',()=>{},()=>{})
+    },
+    toClassificationYellow(){
+      this.$router.push('/classification/yellow',()=>{},()=>{})
+    },
+    toClassificationOrange(){
+      this.$router.push('/classification/orange',()=>{},()=>{})
+    },
+    toClassificationRed(){
+      this.$router.push('/classification/red',()=>{},()=>{})
     },
   },
   // 应该在created进行ajax或初始化数据
   created() {
-    if (window.localStorage.getItem("opalOptions") == null) {
-      this.opalOptions.push({ name: "option", isCollapse: true });
-    }
   },
   // 在mounted里进行挂载操作
   mounted() {
     this.$bus.$on("changeLeftBarIsCollapse", () => {
-      this.opalOptions.forEach((obj) => {
-        if (obj.name === "option") obj.isCollapse = !obj.isCollapse;
-      });
+        this.isCollapse = !this.isCollapse;
     });
+
+    this.screenWidth = document.body.clientWidth
+    window.onresize = () => {
+      return (() => {
+        this.screenWidth = document.body.clientWidth
+      })()
+    }
   },
   watch: {
-    //监听路由变化，并给currentMenu
-    $route(e) {
-      this.currentMenu = e.path; // e里面的是当前路由的信息
-    },
-    opalOptions: {
-      deep: true,
-      handler(value) {
-        window.localStorage.setItem("opalOptions", JSON.stringify(value));
+    screenWidth: {
+      handler: function (val) {
+        if (val!==null && val < 1060) {
+            if (!this.isCollapse) this.isCollapse = !this.isCollapse;
+        }
       },
-    },
+      immediate: true
+    }
   },
 };
 </script>
@@ -106,9 +114,5 @@ export default {
   width: 200px;
   background-color: blue;
 }
-.blue {
-  width: 0.8rem;
-  height: 0.8rem;
-  background-color: blue;
-}
+
 </style>

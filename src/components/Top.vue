@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="top">
-    <i :class="i" @click="offOrOn()"></i>
+    <i :class="i"  @click="offOrOn()"></i>
     <div class="logo">
       <span>Opal</span>
     </div>
@@ -56,5 +56,10 @@ i {
   text-align: center;
   cursor: pointer;
   color: #fff;
+}
+@media screen and (max-width: 960px) {
+  i{
+    pointer-events: none;
+  }
 }
 </style>
