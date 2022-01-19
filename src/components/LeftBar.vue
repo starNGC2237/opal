@@ -47,57 +47,57 @@
 
 <script>
 export default {
-  name: "LeftBar",
-  data() {
-    return {
-      isCollapse:true,
-      screenWidth: null
-    };
-  },
-  methods: {
-    toClassification(){
-      this.$router.push('/classification',()=>{},()=>{})
-    },
-    toClassificationBlue(){
-      this.$router.push('/classification/blue',()=>{},()=>{})
-    },
-    toClassificationYellow(){
-      this.$router.push('/classification/yellow',()=>{},()=>{})
-    },
-    toClassificationOrange(){
-      this.$router.push('/classification/orange',()=>{},()=>{})
-    },
-    toClassificationRed(){
-      this.$router.push('/classification/red',()=>{},()=>{})
-    },
-  },
-  // 应该在created进行ajax或初始化数据
-  created() {
-  },
-  // 在mounted里进行挂载操作
-  mounted() {
-    this.$bus.$on("changeLeftBarIsCollapse", () => {
-        this.isCollapse = !this.isCollapse;
-    });
-
-    this.screenWidth = document.body.clientWidth
-    window.onresize = () => {
-      return (() => {
-        this.screenWidth = document.body.clientWidth
-      })()
-    }
-  },
-  watch: {
-    screenWidth: {
-      handler: function (val) {
-        if (val!==null && val < 1060) {
-            if (!this.isCollapse) this.isCollapse = !this.isCollapse;
+    name: 'LeftBar',
+    data() {
+        return {
+            isCollapse: true,
+            screenWidth: null
         }
-      },
-      immediate: true
+    },
+    methods: {
+        toClassification() {
+            this.$router.push('/classification', () => {}, () => {})
+        },
+        toClassificationBlue() {
+            this.$router.push('/classification/blue', () => {}, () => {})
+        },
+        toClassificationYellow() {
+            this.$router.push('/classification/yellow', () => {}, () => {})
+        },
+        toClassificationOrange() {
+            this.$router.push('/classification/orange', () => {}, () => {})
+        },
+        toClassificationRed() {
+            this.$router.push('/classification/red', () => {}, () => {})
+        }
+    },
+    // 应该在created进行ajax或初始化数据
+    created() {
+    },
+    // 在mounted里进行挂载操作
+    mounted() {
+        this.$bus.$on('changeLeftBarIsCollapse', () => {
+            this.isCollapse = !this.isCollapse
+        })
+
+        this.screenWidth = document.body.clientWidth
+        window.onresize = () => {
+            return (() => {
+                this.screenWidth = document.body.clientWidth
+            })()
+        }
+    },
+    watch: {
+        screenWidth: {
+            handler: function(val) {
+                if (val !== null && val < 1060) {
+                    if (!this.isCollapse) this.isCollapse = !this.isCollapse
+                }
+            },
+            immediate: true
+        }
     }
-  },
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

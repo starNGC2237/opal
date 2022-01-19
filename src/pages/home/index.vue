@@ -21,27 +21,27 @@
 </template>
 
 <script>
-import SignIn from "@/pages/home/components/sidebar/SignIn";
-import AD from "@/pages/home/components/sidebar/AD"
-import AddList from "@/pages/home/components/List/AddList";
+import SignIn from '@/pages/home/components/sidebar/SignIn'
+import AD from '@/pages/home/components/sidebar/AD'
+import AddList from '@/pages/home/components/List/AddList'
 export default {
-  name: "Home",
-  components:{
-    SignIn,
-    AD,
-    AddList
-  },
-  data() {
-    return {
-    };
-  },
-  computed:{
-  },
-  methods:{
-  },
-  mounted() {
-  },
-};
+    name: 'Home',
+    components: {
+        SignIn,
+        AD,
+        AddList
+    },
+    data() {
+        return {
+        }
+    },
+    computed: {
+    },
+    methods: {
+    },
+    mounted() {
+    }
+}
 </script>
 
 <style scoped>
@@ -55,7 +55,7 @@ export default {
   width: 100%;
 }
 .list{
-  background-color: #409EFF;
+  background-color: white;
 }
 .sidebar{
   display: flex;

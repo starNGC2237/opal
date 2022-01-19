@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name:'Classification'
+    name: 'Classification'
 }
 </script>
 

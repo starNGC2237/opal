@@ -27,16 +27,16 @@
 </template>
 
 <script>
-import LeftBar from "./components/LeftBar.vue";
-import Top from "./components/Top.vue";
+import LeftBar from './components/LeftBar.vue'
+import Top from './components/Top.vue'
 
 export default {
-  name: "App",
-  components: {
-    LeftBar,
-    Top,
-  },
-};
+    name: 'App',
+    components: {
+        LeftBar,
+        Top
+    }
+}
 </script>
 
 <style>

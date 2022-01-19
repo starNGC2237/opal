@@ -12,8 +12,8 @@
 
 <script>
 export default {
-  name: "Project",
-};
+    name: 'Project'
+}
 </script>
 
 <style scoped>

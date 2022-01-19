@@ -12,24 +12,24 @@
     <div class="logo">
       <span>Opal</span>
     </div>
-    
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "Top",
-  data() {
-    return {
-      i: "el-icon-s-operation",
-    };
-  },
-  methods: {
-    offOrOn() {
-      this.$bus.$emit("changeLeftBarIsCollapse")
+    name: 'Top',
+    data() {
+        return {
+            i: 'el-icon-s-operation'
+        }
     },
-  },
-};
+    methods: {
+        offOrOn() {
+            this.$bus.$emit('changeLeftBarIsCollapse')
+        }
+    }
+}
 </script>
 
 <style scoped>

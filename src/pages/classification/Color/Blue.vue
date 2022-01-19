@@ -13,15 +13,15 @@
       <el-breadcrumb-item>蓝色</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="container">
-      
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Blue",
-};
+    name: 'Blue'
+}
 </script>
 
 <style scoped>

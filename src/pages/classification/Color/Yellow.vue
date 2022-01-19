@@ -20,8 +20,8 @@
 
 <script>
 export default {
-  name: "Yellow",
-};
+    name: 'Yellow'
+}
 </script>
 
 <style scoped>

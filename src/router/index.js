@@ -6,9 +6,9 @@
  * @Description: file content
  * @FilePath: \opal\src\router\index.js
  */
-import VueRouter from "vue-router";
+import VueRouter from 'vue-router'
 
-import AboutOpal from '../pages/AboutOpal.vue';
+import AboutOpal from '../pages/AboutOpal.vue'
 import Statistics from '../pages/Statistics.vue'
 import Home from '../pages/home'
 import Project from '../pages/Project.vue'
@@ -17,10 +17,10 @@ import ClassificationBlue from '../pages/classification/Color/Blue.vue'
 import ClassificationRed from '../pages/classification/Color/Red.vue'
 import ClassificationYellow from '../pages/classification/Color/Yellow.vue'
 import ClassificationOrange from '../pages/classification/Color/Orange.vue'
-import NOFOUND from  '../pages/404/index'
+import NOFOUND from '../pages/404/index'
 
 const router = new VueRouter({
-    mode:'history',
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -28,7 +28,7 @@ const router = new VueRouter({
         },
         {
             path: '/about',
-            component: AboutOpal,
+            component: AboutOpal
         },
         {
             path: '/statistics',
@@ -63,18 +63,15 @@ const router = new VueRouter({
             component: ClassificationOrange
         },
         {
-            path:'/404',
-            component:NOFOUND
+            path: '/404',
+            component: NOFOUND
         },
         {
-            path:'*',
-            redirect:'/404'
+            path: '*',
+            redirect: '/404'
         }
-
 
     ]
 })
-
-
 
 export default router

@@ -16,32 +16,32 @@
 </template>
 
 <script>
-import {mapActions, mapGetters, mapState} from "vuex";
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
-  name: "SignIn",
-  data(){
-    return {
-      timeThere:'',
+    name: 'SignIn',
+    data() {
+        return {
+            timeThere: ''
+        }
+    },
+    computed: {
+        ...mapState('signInRecords', ['signInRecords']),
+        ...mapGetters('signInRecords', ['isSignIn'])
+    },
+    created() {
+        const timeHour = this.$dayjs()
+        if (timeHour.hour() < 12) {
+            this.timeThere = '上午好！'
+        } else if (timeHour.hour() < 18) {
+            this.timeThere = '下午好！'
+        } else {
+            this.timeThere = '晚上好！'
+        }
+    },
+    methods: {
+        ...mapActions('signInRecords', ['signin'])
     }
-  },
-  computed:{
-    ...mapState('signInRecords',['signInRecords']),
-    ...mapGetters('signInRecords',['isSignIn'])
-  },
-  created() {
-    let timeHour=this.$dayjs()
-    if(timeHour.hour()<12){
-      this.timeThere='上午好！'
-    }else if(timeHour.hour()<18){
-      this.timeThere='下午好！'
-    }else {
-      this.timeThere='晚上好！'
-    }
-  },
-  methods:{
-    ...mapActions('signInRecords', ['signin'])
-  }
 }
 </script>
 
