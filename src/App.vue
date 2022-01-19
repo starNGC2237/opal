@@ -11,12 +11,12 @@
   <div id="app">
     <el-container class="app_container">
       <el-aside width="fit-content">
-          <LeftBar />
+        <LeftBar/>
       </el-aside>
 
       <el-container>
         <el-header>
-          <Top />
+          <Top/>
         </el-header>
         <el-main>
           <router-view></router-view>
@@ -47,6 +47,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .el-header {
   background-color: #409EFF;
   color: #333;
@@ -74,6 +75,7 @@ export default {
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
+
 .scrollbar_left {
   width: fit-content;
   height: fit-content;

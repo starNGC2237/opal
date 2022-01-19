@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.ad{
+.ad {
   width: 100%;
   height: 100px;
   background-color: #409EFF;

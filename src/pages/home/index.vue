@@ -24,6 +24,7 @@
 import SignIn from '@/pages/home/components/sidebar/SignIn'
 import AD from '@/pages/home/components/sidebar/AD'
 import AddList from '@/pages/home/components/List/AddList'
+
 export default {
     name: 'Home',
     components: {
@@ -32,13 +33,10 @@ export default {
         AddList
     },
     data() {
-        return {
-        }
+        return {}
     },
-    computed: {
-    },
-    methods: {
-    },
+    computed: {},
+    methods: {},
     mounted() {
     }
 }
@@ -49,19 +47,23 @@ export default {
   display: flex;
   margin: 1rem;
 }
-.container{
+
+.container {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
-.list{
+
+.list {
   background-color: white;
 }
-.sidebar{
+
+.sidebar {
   display: flex;
   flex-direction: column;
 }
-.sidebar div:not(:last-child){
+
+.sidebar div:not(:last-child) {
   margin-bottom: 2rem;
 }
 

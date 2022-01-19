@@ -8,10 +8,10 @@
 -->
 <template>
   <el-menu
-    default-active="currentMenu"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    :router="true"
+      default-active="currentMenu"
+      class="el-menu-vertical-demo"
+      :collapse="isCollapse"
+      :router="true"
   >
     <el-menu-item index="/home">
       <i class="el-icon-house"></i>
@@ -26,12 +26,13 @@
       <span slot="title">统计</span>
     </el-menu-item>
     <el-submenu index="/classification" @click.native="toClassification()">
-      <template slot="title" >
+      <template slot="title">
         <i class="el-icon-collection"></i>
         <span slot="title">分类</span>
       </template>
       <el-menu-item index="/classification/blue" @click.native.stop="toClassificationBlue()"
-        >蓝色</el-menu-item
+      >蓝色
+      </el-menu-item
       >
       <el-menu-item index="/classification/yellow" @click.native.stop="toClassificationYellow()">黄色</el-menu-item>
       <el-menu-item index="/classification/orange" @click.native.stop="toClassificationOrange()">橙色</el-menu-item>
@@ -56,19 +57,29 @@ export default {
     },
     methods: {
         toClassification() {
-            this.$router.push('/classification', () => {}, () => {})
+            this.$router.push('/classification', () => {
+            }, () => {
+            })
         },
         toClassificationBlue() {
-            this.$router.push('/classification/blue', () => {}, () => {})
+            this.$router.push('/classification/blue', () => {
+            }, () => {
+            })
         },
         toClassificationYellow() {
-            this.$router.push('/classification/yellow', () => {}, () => {})
+            this.$router.push('/classification/yellow', () => {
+            }, () => {
+            })
         },
         toClassificationOrange() {
-            this.$router.push('/classification/orange', () => {}, () => {})
+            this.$router.push('/classification/orange', () => {
+            }, () => {
+            })
         },
         toClassificationRed() {
-            this.$router.push('/classification/red', () => {}, () => {})
+            this.$router.push('/classification/red', () => {
+            }, () => {
+            })
         }
     },
     // 应该在created进行ajax或初始化数据
@@ -106,9 +117,11 @@ export default {
   width: 200px;
   box-sizing: border-box;
 }
+
 .el-menu-vertical-demo {
   height: 100vh;
 }
+
 .el-menu-vertical-demo > div {
   height: 60px;
   width: 200px;

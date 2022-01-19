@@ -10,7 +10,8 @@
   <div class="yellow">
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/classification' }"
-        >分类</el-breadcrumb-item
+      >分类
+      </el-breadcrumb-item
       >
       <el-breadcrumb-item>黄色</el-breadcrumb-item>
     </el-breadcrumb>
@@ -30,6 +31,7 @@ export default {
   flex-direction: column;
   padding: 20px;
 }
+
 .container {
   margin-top: 1.5rem;
   display: flex;

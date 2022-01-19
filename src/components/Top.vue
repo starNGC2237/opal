@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="top">
-    <i :class="i"  @click="offOrOn()"></i>
+    <i :class="i" @click="offOrOn()"></i>
     <div class="logo">
       <span>Opal</span>
     </div>
@@ -33,32 +33,35 @@ export default {
 </script>
 
 <style scoped>
-.top{
+.top {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.logo{
+
+.logo {
   display: flex;
   align-items: center;
   width: fit-content;
   height: 100%;
-  color:#fff;
+  color: #fff;
 }
 
-.logo>span{
+.logo > span {
   font-size: 1.2rem;
 }
+
 i {
   font-size: 26px;
   text-align: center;
   cursor: pointer;
   color: #fff;
 }
+
 @media screen and (max-width: 960px) {
-  i{
+  i {
     pointer-events: none;
   }
 }

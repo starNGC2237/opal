@@ -3,14 +3,15 @@
     <div class="daily">
       <div class="text">
         <i class="el-icon-coffee"></i>
-        <span class="time">{{timeThere}}</span>
+        <span class="time">{{ timeThere }}</span>
       </div>
       <el-button type="primary" round size="small" :disabled="isSignIn" @click="signin()">
-        {{isSignIn?'已签到':'签到'}}
+        {{ isSignIn ? '已签到' : '签到' }}
       </el-button>
     </div>
     <div class="days">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consectetur deleniti deserunt eius eos est eveniet fugiat fugit id illo obcaecati ratione repudiandae saepe sunt temporibus veritatis, voluptatem. Dolorem, placeat.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consectetur deleniti deserunt eius eos est eveniet
+      fugiat fugit id illo obcaecati ratione repudiandae saepe sunt temporibus veritatis, voluptatem. Dolorem, placeat.
     </div>
   </div>
 </template>
@@ -46,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.signin{
+.signin {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -54,7 +55,8 @@ export default {
   justify-items: center;
   background-color: white;
 }
-.daily{
+
+.daily {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -63,13 +65,16 @@ export default {
   padding: 1rem;
   color: #303133;
 }
-.daily>.text{
+
+.daily > .text {
   font-size: larger;
 }
-.daily>.text>.time{
+
+.daily > .text > .time {
   margin-left: 10px;
 }
-.days{
+
+.days {
   color: #909399;
   padding: 0 1rem 1rem;
 }

@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-.about{
+.about {
   padding: 20px;
 }
 </style>

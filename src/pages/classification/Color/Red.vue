@@ -9,14 +9,15 @@
 <template>
   <div class="red">
     <div class="orange">
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/classification' }"
-        >分类</el-breadcrumb-item
-      >
-      <el-breadcrumb-item>红色</el-breadcrumb-item>
-    </el-breadcrumb>
-    <div class="container"></div>
-  </div>
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/classification' }"
+        >分类
+        </el-breadcrumb-item
+        >
+        <el-breadcrumb-item>红色</el-breadcrumb-item>
+      </el-breadcrumb>
+      <div class="container"></div>
+    </div>
   </div>
 </template>
 
@@ -32,6 +33,7 @@ export default {
   flex-direction: column;
   padding: 20px;
 }
+
 .container {
   margin-top: 1.5rem;
   display: flex;

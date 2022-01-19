@@ -76,6 +76,7 @@ export default {
   justify-content: space-around;
   padding: 1rem;
 }
+
 #main,
 #main2,
 #main3 {

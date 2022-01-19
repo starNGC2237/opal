@@ -30,7 +30,8 @@ export default {
   flex-direction: column;
   padding: 20px;
 }
-.container{
+
+.container {
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;

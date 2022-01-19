@@ -2,7 +2,7 @@
   <div class="add_list">
     <el-form :model="todo" label-position="left" class="form" :rules="rules">
       <el-form-item label="todo名称：" prop="name">
-        <el-input v-model="todo.name" ></el-input>
+        <el-input v-model="todo.name"></el-input>
       </el-form-item>
       <el-form-item label="历经时间：">
         <el-date-picker
@@ -87,15 +87,17 @@ export default {
 </script>
 
 <style scoped>
-.add_list{
+.add_list {
   display: flex;
   padding: 1rem;
   justify-content: center;
 }
-.form{
+
+.form {
   max-width: 100%;
 }
-.listTimeCss{
+
+.listTimeCss {
   max-width: 100%;
 }
 </style>
