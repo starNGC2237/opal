@@ -5,7 +5,7 @@
         <i class="el-icon-coffee"></i>
         <span class="time">{{ timeThere }}</span>
       </div>
-      <el-button type="primary" round size="small" :disabled="isSignIn" @click="signin()">
+      <el-button type="primary" round size="small" :disabled="isSignIn" @click="signInCommit">
         {{ isSignIn ? '已签到' : '签到' }}
       </el-button>
     </div>
@@ -41,6 +41,13 @@ export default {
         }
     },
     methods: {
+        signInCommit() {
+            this.signin()
+            this.$message({
+                message: '签到成功！',
+                type: 'success'
+            })
+        },
         ...mapActions('signInRecords', ['signin'])
     }
 }

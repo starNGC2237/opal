@@ -5,12 +5,14 @@ const signInRecords = {
     namespaced: true,
     actions: {
         signin: function(context) {
-            context.commit('SIGNIN', dayjs())
+            if (!context.getters.isSignIn) {
+                context.commit('SIGNIN', dayjs(), context)
+            }
         }
     },
     mutations: {
         SIGNIN: function(state, value) {
-            state.signInRecords.push({ time: value })
+            state.signInRecords.push({ time: value.toString() })
             window.localStorage.setItem('signInRecords', JSON.stringify(state.signInRecords))
         }
     },

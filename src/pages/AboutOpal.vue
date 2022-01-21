@@ -18,6 +18,7 @@
     <p>应该没什么要写的了吧（</p>
     <p>哦哦，想起来了，技术栈是vue2 + vue-cli + element-ui + vue-router +echarts + normalize.css</p>
     <p>后面会升级vue3的，也会加vuex的（毕竟vuex舒服</p>
+    <p>划掉前面的一行，vuex已经加了（）</p>
   </div>
 </template>
 
