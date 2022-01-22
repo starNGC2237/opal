@@ -13,7 +13,6 @@
       <el-aside width="fit-content">
         <LeftBar/>
       </el-aside>
-
       <el-container>
         <el-header>
           <Top/>
@@ -57,8 +56,9 @@ export default {
 .el-aside {
   color: #333;
   text-align: center;
+  padding-top: 60px;
   line-height: 200px;
-  height: 100vh;
+  height: calc(100vh - 60px);
 }
 
 .el-main {
@@ -66,19 +66,7 @@ export default {
   color: #333;
   padding: 0;
 }
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
-
-.scrollbar_left {
-  width: fit-content;
+.el-calendar-table .el-calendar-day{
   height: fit-content;
-  background-color: white;
 }
 </style>

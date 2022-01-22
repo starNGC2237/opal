@@ -9,7 +9,7 @@
 <template>
   <el-menu
       default-active="currentMenu"
-      class="el-menu-vertical-demo"
+      class="el-menu-vertical"
       :collapse="isCollapse"
       :router="true"
   >
@@ -113,19 +113,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.el-menu-vertical:not(.el-menu--collapse) {
   width: 200px;
+  height: 60px;
   box-sizing: border-box;
 }
-
-.el-menu-vertical-demo {
-  height: 100vh;
-}
-
-.el-menu-vertical-demo > div {
+.top{
   height: 60px;
-  width: 200px;
-  background-color: blue;
+  box-sizing: border-box;
 }
-
 </style>

@@ -12,7 +12,6 @@
     <div class="logo">
       <span>Opal</span>
     </div>
-
   </div>
 </template>
 
