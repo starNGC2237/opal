@@ -2,7 +2,8 @@
 
 ## todo functions
 - [ ] add a signInTimeLists component
-- [ ] add a calendarProject component
+- [x] add a calendarProject component
+  - [ ] Modify the calendarProject component
 ## Project setup
 ```
 yarn install
