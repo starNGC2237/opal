@@ -9,7 +9,7 @@
 <template>
   <div class="home">
     <el-row class="container">
-      <el-col :xs="21" :sm="21" :md="21" :lg="14" :xl="14" class="list">
+      <el-col :xs="21" :sm="21" :md="21" :lg="15" :xl="16" class="list">
         <AddList></AddList>
       </el-col>
       <el-col class="hidden-md-and-down sidebar" :lg="6" :xl="6">
@@ -56,6 +56,7 @@ export default {
 
 .list {
   background-color: white;
+  max-width: 700px;
 }
 
 .sidebar {

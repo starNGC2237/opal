@@ -5,6 +5,7 @@ const signInRecords = {
     namespaced: true,
     actions: {
         signin: function(context) {
+            console.log(context)
             if (!context.getters.isSignIn) {
                 context.commit('SIGNIN', dayjs(), context)
             }

@@ -1,5 +1,8 @@
 # opal
 
+## todo functions
+- [ ] add a signInTimeLists component
+- [ ] add a calendarProject component
 ## Project setup
 ```
 yarn install
