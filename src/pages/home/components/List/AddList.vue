@@ -91,6 +91,7 @@ export default {
   display: flex;
   padding: 1rem;
   justify-content: center;
+    background-color: white;
 }
 
 .form {

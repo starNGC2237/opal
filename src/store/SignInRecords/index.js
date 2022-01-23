@@ -13,7 +13,7 @@ const signInRecords = {
     },
     mutations: {
         SIGNIN: function(state, value) {
-            state.signInRecords.push({ time: value.toString() })
+            state.signInRecords.push({ time: value })
             window.localStorage.setItem('signInRecords', JSON.stringify(state.signInRecords))
         }
     },

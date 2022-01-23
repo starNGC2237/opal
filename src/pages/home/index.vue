@@ -11,6 +11,7 @@
     <el-row class="container">
       <el-col :xs="21" :sm="21" :md="21" :lg="15" :xl="16" class="list">
         <AddList></AddList>
+        <SignInRecordList></SignInRecordList>
       </el-col>
       <el-col class="hidden-md-and-down sidebar" :lg="6" :xl="6">
         <SignIn></SignIn>
@@ -24,21 +25,21 @@
 import SignIn from '@/pages/home/components/sidebar/SignIn'
 import AD from '@/pages/home/components/sidebar/AD'
 import AddList from '@/pages/home/components/List/AddList'
+import SignInRecordList from '@/pages/home/components/List/SignInRecordList'
 
 export default {
     name: 'Home',
     components: {
         SignIn,
         AD,
-        AddList
+        AddList,
+        SignInRecordList
     },
     data() {
         return {}
     },
     computed: {},
-    methods: {},
-    mounted() {
-    }
+    methods: {}
 }
 </script>
 
@@ -55,10 +56,12 @@ export default {
 }
 
 .list {
-  background-color: white;
   max-width: 700px;
 }
 
+.list div:not(:last-child){
+    margin-bottom: 2rem;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
