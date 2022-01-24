@@ -2,7 +2,7 @@
   <div class="signin">
     <div class="daily">
       <div class="text">
-        <i class="el-icon-coffee"></i>
+        <i :class="this.drink"></i>
         <span class="time">{{ timeThere }}</span>
       </div>
       <el-button type="primary" round size="small" :disabled="isSignIn" @click="signInCommit">
@@ -34,10 +34,13 @@ export default {
         const timeHour = this.$dayjs()
         if (timeHour.hour() < 12) {
             this.timeThere = '上午好！'
+            this.drink = 'el-icon-hot-water'
         } else if (timeHour.hour() < 18) {
             this.timeThere = '下午好！'
+            this.drink = 'el-icon-ice-drink'
         } else {
             this.timeThere = '晚上好！'
+            this.drink = 'el-icon-coffee'
         }
     },
     methods: {

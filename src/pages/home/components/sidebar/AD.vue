@@ -1,6 +1,6 @@
 <template>
   <div class="ad">
-    <slot>默认显示</slot>
+    <slot>AD</slot>
   </div>
 </template>
 
