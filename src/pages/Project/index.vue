@@ -32,10 +32,11 @@ export default {
 
 <style scoped>
 .project {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+    min-width: 1000px;
 }
 .is-selected {
   color: #1989FA;

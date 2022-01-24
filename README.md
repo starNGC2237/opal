@@ -1,9 +1,14 @@
 # opal
 
 ## todo functions
-- [ ] add a signInTimeLists component
+- [ ] modify the SignIn component
+  - [ ] for example: 
+    - add a function to know the number of continuous sign-in days
+    - good morning or good evening or good afternoon with different icons
+- [x] add a signInTimeLists component
+  - [ ] modify the signInTimeLists component
 - [x] add a calendarProject component
-  - [ ] Modify the calendarProject component
+  - [ ] modify the calendarProject component
 ## Project setup
 ```
 yarn install
