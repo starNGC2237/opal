@@ -40,33 +40,34 @@ export default {
 
 <style>
 .app_container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .el-header {
-  background-color: #409EFF;
-  color: #333;
-  line-height: 60px;
+    background-color: #409EFF;
+    color: #333;
+    line-height: 60px;
 }
 
 .el-aside {
-  color: #333;
-  text-align: center;
-  padding-top: 60px;
-  line-height: 200px;
-  height: calc(100vh - 60px);
+    color: #333;
+    text-align: center;
+    padding-top: 60px;
+    line-height: 200px;
+    height: calc(100vh - 60px);
 }
 
 .el-main {
-  background-color: #e9eef3;
-  color: #333;
-  padding: 0;
+    background-color: #e9eef3;
+    color: #333;
+    padding: 0;
 }
 .el-calendar-table .el-calendar-day{
-  height: fit-content;
+    height: fit-content;
+    width: fit-content;
 }
 </style>

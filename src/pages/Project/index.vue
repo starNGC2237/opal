@@ -40,5 +40,4 @@ export default {
 .is-selected {
   color: #1989FA;
 }
-
 </style>

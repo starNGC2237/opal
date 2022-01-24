@@ -20,7 +20,7 @@
       <el-form-item label="备注内容：">
         <el-input
             type="textarea"
-            autosize
+            :rows="2"
             placeholder="请输入内容"
             v-model="todo.note">
         </el-input>
